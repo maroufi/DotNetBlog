@@ -1,0 +1,24 @@
+﻿@model Posts__Comments.Models.Comment
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Are you sure to delete this Comment ?</legend>
+             @Model.Text
+            <br />
+            @Html.ActionLink("Yes", "DeleteConfirmed", new { id = Model.ID })|
+            @Html.ActionLink("No", "Index", new { postid = Model.PostID })
+        </fieldset> 
+    </div>
+</body>
+</html>

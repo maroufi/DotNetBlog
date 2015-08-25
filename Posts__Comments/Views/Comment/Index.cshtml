@@ -1,0 +1,29 @@
+﻿@model List<Posts__Comments.Models.Comment>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>@Html.ActionLink("Create new Comment", "Create")</h3>
+    <div>
+        @foreach (var item in Model)
+        {
+           <fieldset>
+               <legend></legend>
+                @item.Text
+               <br />
+               @Html.ActionLink("Edit", "Edit", new { id =item.ID })|
+               @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+           </fieldset> 
+        } 
+    </div>
+    @Html.ActionLink("Posts", "Index","Post")
+</body>
+</html>

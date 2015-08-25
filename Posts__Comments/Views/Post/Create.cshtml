@@ -1,0 +1,37 @@
+﻿@model Posts__Comments.Models.Post
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div> 
+
+        @using(@Html.BeginForm("Create","Post"))
+        {
+            <div>
+                @Html.ValidationSummary()
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Topic)
+            </div>
+            <div>
+                @Html.EditorFor(m => m.Topic)
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Text)
+            </div>
+            <div>
+                @Html.EditorFor(m => m.Text)
+            </div>
+            <input type="submit" value="Create"/>
+        }
+    </div>
+</body>
+</html>

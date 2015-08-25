@@ -1,0 +1,27 @@
+﻿@model Posts__Comments.Models.Comment
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Create", "Comment"))
+        {
+            <div>
+                @Html.LabelFor(m => m.Text)
+            </div>
+            <div>
+                @Html.EditorFor(m => m.Text)
+            </div>
+            <input type="submit" value="Comment" />
+        }
+    </div>
+</body>
+</html>
